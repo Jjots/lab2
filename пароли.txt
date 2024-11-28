@@ -1,0 +1,9 @@
+Valid1@Password
+weakpass
+12345
+Another1$password
+SimplePassword
+Short!1
+password1234
+pass!W0rd
+Test@1234
