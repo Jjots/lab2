@@ -21,11 +21,8 @@ def find_passwords_in_file(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
             text = file.read()
-            #print("Содержимое файла в сыром виде:", repr(text))  # Сырой вывод содержимого
             potential_passwords = re.findall(r'\b[A-Za-z\d!@#$%^&*()_+=\-{}|:"<>?~`.,;\'\[\]\\\/]{8,}\b', text)
-            #print("Потенциальные пароли:", potential_passwords)  # Потенциальные пароли
             strong_passwords = [password for password in potential_passwords if is_strong_password(password)]
-            #print("Сильные пароли:", strong_passwords)  # Сильные пароли
             return strong_passwords
     except Exception as e:
         print(f"Ошибка при чтении файла: {e}")
@@ -33,8 +30,8 @@ def find_passwords_in_file(file_path):
 
 # print(is_strong_password("Str0ngP@ssw0rd"))  # True
 # print(is_strong_password("weakpassword"))   # False
-#print(find_passwords_in_url("https://github.com/Jjots/lab2/blob/main/passwords_url.html"))
-print(find_passwords_in_file("C:/Users/Alice/Desktop/лаба2/passwords.txt"))
+print(find_passwords_in_url("https://github.com/Jjots/lab2/blob/main/passwords_url.html"))
+#print(find_passwords_in_file("C:/Users/Alice/Desktop/лаба2/passwords.txt"))
 
 
 
